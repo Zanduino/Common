@@ -10,4 +10,4 @@ fi
 echo GithubWorkspace is ${GITHUB_WORKSPACE}
 cp -n ${GITHUB_WORKSPACE}/Common/clang-format/.clang-format ${GITHUB_WORKSPACE}/.clang-format
 ls -al ${GITHUB_WORKSPACE}
-clang-format --style=Google --dump-config
+clang-format --version

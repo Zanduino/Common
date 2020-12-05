@@ -58,6 +58,8 @@ fi
 
 cd $BUILD_DIR
 
+cp -n ${BUILD_DIR}/Common/Doxygen/Doxyfile ${BUILD_DIR}/Doxyfile
+
 # The default version of doxygen is too old so we'll use a modern version
 wget -q https://cdn-learn.adafruit.com/assets/assets/000/067/405/original/doxygen-1.8.13.linux.bin.tar.gz
 tar -xf doxygen-1.8.13.linux.bin.tar.gz

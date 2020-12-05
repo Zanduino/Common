@@ -9,3 +9,4 @@ fi
 ## Copy the standard clang-format file to start directory but don't overwrite existing file
 echo GithubWorkspace is ${GITHUB_WORKSPACE}
 cp -n ${GITHUB_WORKSPACE}/Common/clang-format/.clang-format ${GITHUB_WORKSPACE}/.clang-format
+ls -al ${GITHUB_WORKSPACE}

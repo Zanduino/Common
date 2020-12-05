@@ -105,7 +105,7 @@ def run_clang_format_diff(args, file):
             original = f.readlines()
     except IOError as exc:
         raise DiffError(str(exc))
-    invocation = [args.clang_format_executable, file]
+    invocation = [args.clang_format_executable, file] + ' -style=file'
 
     # Use of utf-8 to decode the process output.
     #
@@ -208,7 +208,7 @@ def main():
         '--clang-format-executable',
         metavar='EXECUTABLE',
         help='path to the clang-format executable',
-        default='clang-format -style=file')
+        default='clang-format')
     parser.add_argument(
         '--extensions',
         help='comma separated list of file extensions (default: {})'.format(

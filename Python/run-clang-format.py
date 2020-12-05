@@ -105,10 +105,11 @@ def run_clang_format_diff(args, file):
             original = f.readlines()
     except IOError as exc:
         raise DiffError(str(exc))
-    invocation = [args.clang_format_executable, '--style=file', file]
+    invocation = [args.clang_format_executable, file]
+    print("{}: {} {}".format('test', 'commandline', *invocation), file=sys.stderr)
+    invocation = [args.clang_format_executable, "--style=file", file]
     print("{}: {} {}".format('test', 'commandline', *invocation), file=sys.stderr)
 
-#    invocation = [args.clang_format_executable, file]
 
     # Use of utf-8 to decode the process output.
     #

@@ -107,7 +107,7 @@ def run_clang_format_diff(args, file):
         raise DiffError(str(exc))
     invocation = [args.clang_format_executable, file]
     print("{}: {} {}".format('test', 'commandline', ' '.join(invocation), file=sys.stderr)
-    invocation = [args.clang_format_executable, "--style=file", file]
+    invocation = [args.clang_format_executable, '--style=file', file]
     print("{}: {} {}".format('test', 'commandline', ' '.join(invocation), file=sys.stderr)
 
 

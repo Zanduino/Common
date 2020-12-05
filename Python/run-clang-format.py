@@ -247,7 +247,7 @@ def main():
     parser.add_argument(
         '-style',
         metavar='STYLE',
-        default='file'
+        default='file',
         help='Default style')
     )
 

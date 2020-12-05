@@ -208,7 +208,7 @@ def main():
         '--clang-format-executable',
         metavar='EXECUTABLE',
         help='path to the clang-format executable',
-        default='clang-format')
+        default='clang-format -style=file')
     parser.add_argument(
         '--extensions',
         help='comma separated list of file extensions (default: {})'.format(
@@ -244,12 +244,6 @@ def main():
         default=[],
         help='exclude paths matching the given glob-like pattern(s)'
         ' from recursive search')
-    parser.add_argument(
-        '-style',
-        metavar='STYLE',
-        default='file',
-        help='Default style'
-    )
 
     args = parser.parse_args()
 

@@ -111,6 +111,7 @@ def run_clang_format_diff(args, file):
     #
     # Hopefully, this is the correct thing to do.
     #
+    #
     # It's done due to the following assumptions (which may be incorrect):
     # - clang-format will returns the bytes read from the files as-is,
     #   without conversion, and it is already assumed that the files use utf-8.

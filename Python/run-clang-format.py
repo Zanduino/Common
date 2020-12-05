@@ -248,7 +248,7 @@ def main():
         '-style',
         metavar='STYLE',
         default='file',
-        help='Default style')
+        help='Default style'
     )
 
     args = parser.parse_args()

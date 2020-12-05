@@ -245,8 +245,10 @@ def main():
         help='exclude paths matching the given glob-like pattern(s)'
         ' from recursive search')
     parser.add_argument(
-    '-style',
-    default='file')
+        '-style',
+        metavar='STYLE',
+        default='file'
+        help='Default style')
     )
 
     args = parser.parse_args()

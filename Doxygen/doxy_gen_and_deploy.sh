@@ -179,6 +179,7 @@ if [ -d "html" ] && [ -f "html/index.html" ]; then
     # The ouput is redirected to /dev/null to hide any sensitive credential data
     # that might otherwise be exposed.
     echo 'Git pushing'
+	echo Git Auth is ${AUTH} with slug ${REPO_SLUG}
 #   git push --force "https://${AUTH}@github.com/${REPO_SLUG}.git" > /dev/null 2>&1
     git push --force "https://${AUTH}@github.com/${REPO_SLUG}.git"
 else

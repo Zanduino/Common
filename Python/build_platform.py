@@ -207,6 +207,9 @@ def test_examples_in_folder(folderpath):
         if os.path.exists(skipfilename):
             ColorPrint.print_warn("skipping")
             continue
+            else:
+            ColorPrint.print_warn(platform)
+            
         if glob.glob(folderpath+"/.*.test.only") and not os.path.exists(onlyfilename):
             ColorPrint.print_warn("skipping")
             continue

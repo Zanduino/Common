@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-pip3 install serial
+pip3 install pyserial
 # make all our directories we need for files and libraries
 mkdir ${HOME}/.arduino15
 mkdir ${HOME}/.arduino15/packages

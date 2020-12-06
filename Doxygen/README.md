@@ -1,5 +1,5 @@
 # Doxygen
-Standard [doxygen](https://www.doxygen.nl/index.html) files
+All files relating to [doxygen](https://www.doxygen.nl/index.html) are stored in this directory
 
 ## Doxyfile
 Common Doxygen configuration file for all projects. The following project-specific values are passed in using environment variables:

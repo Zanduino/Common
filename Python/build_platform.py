@@ -84,7 +84,7 @@ ALL_PLATFORMS={
                         "esp8266", "esp32", "metro_m4"),
     "arcada_platforms" : ("pybadge", "pygamer", "hallowing_m4",
                           "cpb", "cpx_ada"),
-    "zanshin_platforms" : ("uno", "leonardo", "mega2560", "zero", "cpx"
+    "zanshin_platforms" : ("uno", "leonardo", "mega2560", "zero", "cpx",
                           "esp8266", "esp32", "metro_m4", "trinket_5v", "protrinket_5v",
                           "gemma", "flora", "feather32u4", "metro_m0", "metro_m4")
 }

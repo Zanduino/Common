@@ -1,6 +1,9 @@
 #!/bin/bash
 ################################################################################
-## Script to get software instaled and set up for doing "clang-format"        ##
+## Script to get software installed and set up for running "clang-format".    ##
+## If no ".clang-format" file is present in the project root directory, then  ##
+## the default file is copied there in order to always have a a correct style ##
+## file to use when running the clang-format command                          ##
 ##                                                                            ##
 ## Version Date       Developer  Description                                  ##
 ## ======= ========== ========== ============================================ ##
@@ -13,11 +16,4 @@ sudo apt install -fy cppcheck clang-format-10
 if [ ! -f /usr/bin/clang-format ]; then
     sudo ln -s /usr/bin/clang-format-10 /usr/bin/clang-format
 fi
-################################################################################
-## Copy the standard clang-format file to start directory but don't overwrite ##
-## the existing file if it already exists there. This ensures that a valid    ##
-## formatting file is used in any case                                        ##
-################################################################################
 cp -n ${GITHUB_WORKSPACE}/Common/clang-format/.clang-format ${GITHUB_WORKSPACE}/.clang-format
-echo The current version of clang-format is 
-clang-format --version

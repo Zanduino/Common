@@ -84,8 +84,9 @@ ALL_PLATFORMS={
                         "esp8266", "esp32", "metro_m4"),
     "arcada_platforms" : ("pybadge", "pygamer", "hallowing_m4",
                           "cpb", "cpx_ada"),
-    "zanshin_platforms" : ("uno", "leonardo", "mega2560", "zero",
-                          "esp8266", "esp32", "metro_m4")
+    "zanshin_platforms" : ("uno", "leonardo", "mega2560", "zero", "cpx"
+                          "esp8266", "esp32", "metro_m4", "trinket_5v", "protrinket_5v",
+                          "gemma", "flora", "feather32u4", "metro_m0", "metro_m4")
 }
 
 BSP_URLS = "https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json,https://sandeepmistry.github.io/arduino-nRF5/package_nRF5_boards_index.json"

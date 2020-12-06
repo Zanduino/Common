@@ -1,0 +1,78 @@
+####################################################################################################
+## YAML file for github Actions that will perform all of the continuous integration tasks that    ##
+## have been defined to test an Arduino project in github.                                        ##
+##                                                                                                ##
+##                                                                                                ##
+## Version Date       Developer      Comments                                                     ##
+## ======= ========== ============== ============================================================ ##
+## 1.0.0   2020-12-04 SV-Zanshin     Initial coding                                               ##
+##                                                                                                ##
+####################################################################################################
+name: 'Continuous Integration for "ProjectName"'
+
+####################################################################################################
+## Action runs when committing (push), doing a pull request, or a workflow_dispatch               ##
+####################################################################################################
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  ##################################################################################################
+  ## Runner "source-checks" will checkout the project along with the common project files from    ##
+  ## "Zanduino/Common". Then clang-format and doxygen runs are done on the project               ##
+  ##################################################################################################
+  source-checks:
+    name: 'Check c++ format and doxygen'
+    runs-on: ubuntu-latest
+    steps:
+       - name: 'Install "python 3.x" package'
+         uses: actions/setup-python@v1
+         with:
+              python-version: '3.x'
+       - name: 'Checkout the repository from github'
+         uses: actions/checkout@v2
+       - name: 'Checkout the "Zanduino/Common" repository from github'
+         uses: actions/checkout@v2
+         with:
+           repository: Zanduino/Common
+           path: Common
+       - name: 'Install "clang-format" package'
+         run: bash ${GITHUB_WORKSPACE}/Common/Scripts/install_clang_actions.sh
+       - name: 'Check c++ source files with clang-format'
+         run: python3 ${GITHUB_WORKSPACE}/Common/Python/run-clang-format.py -e "ci/*" -e "bin/*" -r .
+       - name: 'Create doxygen html documentation'
+         env:
+          GH_REPO_TOKEN: ${{ secrets.GH_REPO_TOKEN }}
+          ##########################################################################################
+          ## The following 5 lines need to be set here each project                               ##
+          ##########################################################################################
+          PRETTYNAME:     "Test Actions project"
+          PROJECT_NAME:   "TestActions"
+          PROJECT_NUMBER: "v1.0.0"
+          PROJECT_BRIEF:  "Test project for Actions"
+          PROJECT_LOGO:   ""  
+         run: bash ${GITHUB_WORKSPACE}/Common/Scripts/doxy_gen_and_deploy.sh
+  ##################################################################################################
+  ## Runner "build" will checkout the project along with the common project files from            ##
+  ## "Zanduino/Common". Then run the Python script to check standard hardware configurations      ##
+  ##################################################################################################
+  build:
+    name: 'Compile using Arduino IDE on selected platforms'
+    runs-on: ubuntu-latest
+    steps:
+       - name: 'Install "python 3.x" package'
+         uses: actions/setup-python@v1
+         with:
+            python-version: '3.x'
+       - name: 'Checkout the repository from github'
+         uses: actions/checkout@v2
+       - name: 'Checkout the "Zanduino/Common" repository from github'
+         uses: actions/checkout@v2
+         with:
+           repository: Zanduino/Common
+           path: Common
+       - name: 'Install Arduino CLI package'
+         run: bash ${GITHUB_WORKSPACE}/Common/Scripts/install_arduino_cli.sh
+       - name: 'Run master compile python program'
+         run: python3 ${GITHUB_WORKSPACE}/Common/Python/build_platform.py zanshin_platforms

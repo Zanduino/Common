@@ -156,7 +156,7 @@ try:
     for line in libprop:
         if line.startswith("name="):
             our_name = line.replace("name=", "").strip()
-            if our_name.endswith("_Zanduino")
+            if our_name.endswith("_Zanduino"):
                 our_name = our_name[:size-9]
         if line.startswith("depends="):
             deps = line.replace("depends=", "").split(",")

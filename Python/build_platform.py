@@ -157,7 +157,7 @@ try:
         if line.startswith("name="):
             our_name = line.replace("name=", "").strip()
             if our_name.endswith("_Zanduino"):
-                our_name = our_name[:size-9]
+                our_name = our_name[:-9]
         if line.startswith("depends="):
             deps = line.replace("depends=", "").split(",")
             for dep in deps:

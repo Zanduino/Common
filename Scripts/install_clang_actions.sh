@@ -13,7 +13,7 @@
 set -e
 pip3 install clint
 ##sudo apt install -fy cppcheck clang-format-10
-sudo apt install -fy cppcheck clang-12
+sudo apt install -fy cppcheck clang-format-11
 if [ ! -f /usr/bin/clang-format ]; then
     sudo ln -s /usr/bin/clang-format-10 /usr/bin/clang-format
 fi

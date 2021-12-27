@@ -151,7 +151,7 @@ ALL_PLATFORMS={
     "arcada_platforms" : ("pybadge", "pygamer", "hallowing_m4",
                           "cpb", "cpx_ada"),
     "wippersnapper_platforms" : ("metro_m4_airliftlite_tinyusb", "pyportal_tinyusb"),
-    "rp2040_platforms" : ("pico_rp2040", "feather_rp2040")
+    "rp2040_platforms" : ("pico_rp2040", "feather_rp2040"),
     "zanshin_platforms" : ("uno", "leonardo", "mega2560", "zero", "cpx",
                           "esp8266", "esp32", "metro_m4",  "protrinket_5v",
                           "flora", "feather32u4", "metro_m0", "metro_m4")

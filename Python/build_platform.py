@@ -426,7 +426,7 @@ def test_examples_in_learningrepo(folderpath):
             ColorPrint.print_warn("skipping")
             continue
 
-        cmd = ['arduino-cli', 'compile', '-Wno-unused-variable','--warnings', 'all', '--fqbn', fqbn, projectpath]
+        cmd = ['arduino-cli', 'compile', '--Wno-unused-variable','--warnings', 'all', '--fqbn', fqbn, projectpath]
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE)
         r = proc.wait()

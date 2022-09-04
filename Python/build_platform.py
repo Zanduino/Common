@@ -359,11 +359,13 @@ def test_examples_in_folder(folderpath):
 
         if BUILD_WARN:
             if os.path.exists(gen_file_name):
+                ColorPrint.print_info("Compiling with warnings")
                 cmd = ['arduino-cli', 'compile', '--warnings', 'all', '--fqbn', fqbn, '-e', folderpath]
             else:
+                ColorPrint.print_info("Compiling with warnings")
                 cmd = ['arduino-cli', 'compile', '--warnings', 'all', '--fqbn', fqbn, folderpath]
         else:
-            ColorPrint.print_fail("Compiling with warnings")
+            ColorPrint.print_info("Compiling with no warnings")
             cmd = ['arduino-cli', 'compile', '--warnings', 'none', '--export-binaries', '--fqbn', fqbn, folderpath]
 			
 																					  

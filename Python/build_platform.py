@@ -363,7 +363,8 @@ def test_examples_in_folder(folderpath):
             else:
                 cmd = ['arduino-cli', 'compile', '--warnings', 'all', '--fqbn', fqbn, folderpath]
         else:
-            cmd = ['arduino-cli', 'compile', '--warnings', 'none', '--export-binaries', '--fqbn', fqbn, folderpath]
+##            cmd = ['arduino-cli', 'compile', '--warnings', 'none', '--export-binaries', '--fqbn', fqbn, folderpath]
+            cmd = ['arduino-cli', 'compile', '--warnings', 'none', '--fqbn', fqbn, folderpath]
 			
 																					  
 											 

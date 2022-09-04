@@ -363,7 +363,8 @@ def test_examples_in_folder(folderpath):
             else:
                 cmd = ['arduino-cli', 'compile', '--warnings', 'all', '--fqbn', fqbn, folderpath]
         else:
-            cmd = ['arduino-cli', 'compile', '--warnings', 'none', '--export-binaries', '--fqbn', fqbn, folderpath]
+            ColorPrint.print_fail("Compiling with warnings")
+	    cmd = ['arduino-cli', 'compile', '--warnings', 'none', '--export-binaries', '--fqbn', fqbn, folderpath]
 			
 																					  
 											 

@@ -2,6 +2,7 @@
 
 set -e
 pip3 install pyserial
+python3 -m pip install packaging
 # make all our directories we need for files and libraries
 mkdir ${HOME}/.arduino15
 mkdir ${HOME}/.arduino15/packages
